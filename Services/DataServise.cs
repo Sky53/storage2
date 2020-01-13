@@ -12,9 +12,10 @@ namespace storage2.Services
         public User GetUserForId(Guid id)
         {
             User buyer1 = new User();
-            buyer1.Id = id;
+            buyer1.Id = Guid.NewGuid();
             buyer1.Login = "ONEBuyer";
             buyer1.Password = "Password1";
+            buyer1.DateOfBrith = DateTime.Now;
 
 
 
@@ -29,19 +30,19 @@ namespace storage2.Services
             user1.Id = Guid.NewGuid();
             user1.Login = "Login1";
             user1.Password = "Password1";
-            user1.DateOfBrith = new DateTime();
+            user1.DateOfBrith = DateTime.Now;
 
             User user2 = new User();
             user2.Id = Guid.NewGuid();
             user2.Login = "Login2";
             user2.Password = "Password2";
-            user2.DateOfBrith = new DateTime();
+            user2.DateOfBrith = DateTime.Now;
 
             User user3 = new User();
             user3.Id = Guid.NewGuid();
             user3.Login = "Login3";
             user3.Password = "Password3";
-            user3.DateOfBrith = new DateTime();
+            user3.DateOfBrith = DateTime.Now;
 
             buyers.Add(user1);
             buyers.Add(user2);
@@ -55,7 +56,7 @@ namespace storage2.Services
             Order order1 = new Order();
             order1.Number = number;
             order1.Products = new List<Product>();
-            order1.DateCreated = new DateTime();
+            order1.DateCreated = DateTime.Now;
             return order1;
         }
 
@@ -67,17 +68,17 @@ namespace storage2.Services
             Order order1 = new Order();
             order1.Number = random.Next(1, 1000);
             order1.Products = new List<Product>();
-            order1.DateCreated = new DateTime();
+            order1.DateCreated = DateTime.Now;
 
             Order order2 = new Order();
             order2.Number = random.Next(1, 1000);
             order2.Products = new List<Product>();
-            order2.DateCreated = new DateTime();
+            order2.DateCreated = DateTime.Now;
 
             Order order3 = new Order();
             order3.Number = random.Next(1, 1000);
             order3.Products = new List<Product>();
-            order3.DateCreated = new DateTime();
+            order3.DateCreated = DateTime.Now;
 
             orders.Add(order1);
             orders.Add(order2);

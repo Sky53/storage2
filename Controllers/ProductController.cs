@@ -23,16 +23,38 @@ namespace storage2.Controllers
             _logger = logger;
             dataServise = new DataServise();
         }
-        [HttpGet("allproduct")]
+        // GET: api/product
+        [HttpGet]
         public List<Product> GetAll()
         {
             return dataServise.GetProductsList();
         }
-
-        [HttpGet]
-        public Product GetForName()
+        // GET: api/product/MyName
+        [HttpGet("{Name}", Name = "GetForName")]
+        public Product GetForName(string name)
         {
-            return dataServise.GetProductForName("CastomName");
+            return dataServise.GetProductForName(name);
+        }
+
+        // POST: api/product
+        [HttpPost]
+        public void AddProduct([FromBody] string nameProduct, decimal cost)
+        {
+            //todo
+        }
+
+        // PUT: api/product/5
+        [HttpPut("{id}")]
+        public void UpdateProduct(int id, [FromBody] string nameProduct)
+        {
+            //todo
+        }
+
+        // DELETE: api/product/5
+        [HttpDelete("{id}")]
+        public void DeleterProduct(int id)
+        {
+            //todo
         }
     }
 }

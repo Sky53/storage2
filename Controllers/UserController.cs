@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace storage2.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class UserController : ControllerBase
     {
         private readonly ILogger<UserController> _logger;
@@ -20,17 +20,45 @@ namespace storage2.Controllers
         public UserController(ILogger<UserController> logger)
         {
             _logger = logger;
+            dataServise = new DataServise();
         }
+        // GET: api/user
         [HttpGet]
-        public List<User> Get()
+        public List<User> GetAll()
         {
             return dataServise.GetUserList();
         }
-
-        [HttpGet]
-        public User GetForName()
+        // GET: api/user/5
+        [HttpGet("{id}", Name = "GetForid")]
+        public User GetForId(Guid id)
         {
-            return dataServise.GetUserForId(Guid.NewGuid());
+            return dataServise.GetUserForId(id);
+        }
+
+        // POST: api/user
+        [HttpPost]
+        public void AddUser([FromBody] string nameUser, decimal cost)
+        {
+            //todo
+        }
+
+        // PUT: api/user/5
+        [HttpPut("{id}")]
+        public void UpdateUser(int id, 
+                                    [FromBody] string nameProduct, 
+                                    string login, 
+                                    string password, 
+                                    DateTime dateOfBrith)
+        {
+            //todo
+        }
+
+        // DELETE: api/user/5
+        [HttpDelete("{id}")]
+        public void DeleteUser(int id)
+        {
+            //todo
         }
     }
 }
+
