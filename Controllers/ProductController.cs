@@ -10,21 +10,26 @@ using System.Threading.Tasks;
 namespace storage2.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    //serv/api/
+    [Route("api/[controller]")]
     public class ProductController : ControllerBase
     {
         private readonly ILogger<ProductController> _logger;
+       
         private IDataServise dataServise;
+
         public ProductController(ILogger<ProductController> logger)
         {
             _logger = logger;
+            dataServise = new DataServise();
         }
-        [HttpGet]
+        [HttpGet("allproduct")]
         public List<Product> GetAll()
         {
             return dataServise.GetProductsList();
         }
 
+        [HttpGet]
         public Product GetForName()
         {
             return dataServise.GetProductForName("CastomName");

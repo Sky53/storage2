@@ -14,7 +14,9 @@ namespace storage2.Controllers
     public class UserController : ControllerBase
     {
         private readonly ILogger<UserController> _logger;
+      
         private IDataServise dataServise;
+
         public UserController(ILogger<UserController> logger)
         {
             _logger = logger;
@@ -25,6 +27,7 @@ namespace storage2.Controllers
             return dataServise.GetUserList();
         }
 
+        [HttpGet]
         public User GetForName()
         {
             return dataServise.GetUserForId(Guid.NewGuid());

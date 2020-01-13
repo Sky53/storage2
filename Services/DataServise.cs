@@ -12,7 +12,7 @@ namespace storage2.Services
         public User GetUserForId(Guid id)
         {
             User buyer1 = new User();
-            buyer1.Id = Guid.NewGuid();
+            buyer1.Id = id;
             buyer1.Login = "ONEBuyer";
             buyer1.Password = "Password1";
 
@@ -52,7 +52,11 @@ namespace storage2.Services
 
         public Order GetOrderForNumber(int number)
         {
-            throw new NotImplementedException();
+            Order order1 = new Order();
+            order1.Number = number;
+            order1.Products = new List<Product>();
+            order1.DateCreated = new DateTime();
+            return order1;
         }
 
         public List<Order> GetOrdersList()
@@ -89,7 +93,14 @@ namespace storage2.Services
 
         public Product GetProductForName(string name)
         {
-            throw new NotImplementedException();
+            Random random = new Random();
+
+            Product product1 = new Product();
+            product1.Id = Guid.NewGuid();
+            product1.NameProduct = name;
+            product1.Cost = new decimal(random.Next(12, 100));
+
+            return product1;
         }
 
         public List<Product> GetProductsList()
