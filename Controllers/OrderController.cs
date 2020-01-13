@@ -27,7 +27,7 @@ namespace storage2.Controllers
         {
             return dataServise.GetOrdersList();
         }
-        // GET: api/order/{number}
+        // GET: api/order/12
         [HttpGet("{Number}", Name = "GetForNumber")]
         public Order GetForNumber(int number)
         {

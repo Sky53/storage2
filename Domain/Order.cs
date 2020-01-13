@@ -9,9 +9,9 @@ namespace storage2.Models
     {   
         public int Number { get; set; }
 
-        public List<Product> Products { get; set; }
-
         public User UserId { get; set; }
+
+        public List<Product> Products { get; set; }
 
         public DateTime DateCreated { get; set; }
     }
