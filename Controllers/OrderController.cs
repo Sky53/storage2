@@ -40,7 +40,7 @@ namespace storage2.Controllers
         }
 
         // POST: api/order
-        [HttpPost]
+        [HttpPost("{Name}/{Cost}")]
         public void AddOrder([FromBody] List<Product> products)
         {
             //todo
