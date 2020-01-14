@@ -15,13 +15,15 @@ namespace storage2.Services.DAL
 
         public StorageContext()
         {
-            Database.EnsureDeleted();
+    
             Database.EnsureCreated();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=testdb;Username=postgres;Password=root");
+            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=StorageDB;Username=postgres;Password=root");
         }
+
+        
     }
 }

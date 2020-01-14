@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using storage2.Models;
 using storage2.Services;
+using storage2.Services.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,13 +16,15 @@ namespace storage2.Controllers
     public class ProductController : ControllerBase
     {
         private readonly ILogger<ProductController> _logger;
-       
+        private StorageContext _storageContext;
+
         private IDataServise dataServise;
 
         public ProductController(ILogger<ProductController> logger)
         {
             _logger = logger;
             dataServise = new DataServise();
+            _storageContext = new StorageContext();
         }
         // GET: api/product
         [HttpGet]
