@@ -12,6 +12,7 @@ namespace storage2.Models
         public string NameProduct { get; set; }
         public decimal Cost { get; set; }
         public Order Order { get; set; }
+        public int OrderId { get; set; }
         public bool IsDeleted { get; set; }
     }
 }
