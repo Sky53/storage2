@@ -39,8 +39,8 @@ namespace storage2.Controllers
         }
 
         // POST: api/user
-        [HttpPost]
-        public void AddUser([FromBody] string nameUser, string login, string password, DateTime dateTime)
+        [HttpPost("dateTime")]
+        public void AddUser([FromBody] string nameUser, string login, string password,[FromBody] DateTime dateTime)
         {
             //todo
         }

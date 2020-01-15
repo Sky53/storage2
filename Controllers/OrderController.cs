@@ -38,8 +38,14 @@ namespace storage2.Controllers
             return dataServise.GetOrderForNumber(number);
 
         }
-
+        /*
         // POST: api/order
+        [HttpPost("{Name}/{Cost}")]
+        public void AddOrder([FromBody] List<Product> products)
+        {
+            //todo
+        }
+        */
         [HttpPost("{Name}/{Cost}")]
         public void AddOrder([FromBody] List<Product> products)
         {
